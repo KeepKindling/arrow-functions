@@ -87,7 +87,7 @@
 //})
 
 
-// Using the some method here checks the array for items with a price 
+// Using the 'some' method here checks the array for items with a price 
 // equal to or less than 100. If it at least one item returns true, it 
 // will print true in the console. It is a good method to check for 
 // ANY of a certain parameter.
@@ -108,22 +108,63 @@
 // console.log(hasInexpesniveItems)
 
 
+// The 'every' method checks that every iteration meets a certain
+// parameter otherwise it will display false. Below we check that 
+// 'every' item has a price less than 2000 which returns true.
+// const items = [
+//     { name: "Bike",     price: 100 },
+//     { name: "TV",       price: 200 },
+//     { name: "Album",    price: 10  },
+//     { name: "Book",     price: 5   },
+//     { name: "Phone",    price: 500 },
+//     { name: "Computer", price: 1000},
+//     { name: "Keyboard", price: 25  }
+// ]
 
-const items = [
-    { name: "Bike",     price: 100 },
-    { name: "TV",       price: 200 },
-    { name: "Album",    price: 10  },
-    { name: "Book",     price: 5   },
-    { name: "Phone",    price: 500 },
-    { name: "Computer", price: 1000},
-    { name: "Keyboard", price: 25  }
-]
+// const hasInexpesniveItems = items.every((item) => {
+//     return item.price <= 2000
+// })
 
-const hasInexpesniveItems = items.some((item) => {
-    return item.price <= 100
-})
+// console.log(hasInexpesniveItems)
 
-console.log(hasInexpesniveItems)
+
+// the 'reduce' method works differently as it runs an operation on 
+// each item inside of the array and returning a combination of 
+// all the different operations.
+
+// This method takes an item and a property (currentTotal) inside the nested 
+// parenthesis and also a second parameter inside the outer parenthesis
+// which is zero as it is our starting point. 
+
+// We return the price of the item inside the brackets and add 
+// it to the currentTotal variable. The array that the operation
+// iterates through must be the second argument inside the function.
+// const items = [
+//     { name: "Bike",     price: 100 },
+//     { name: "TV",       price: 200 },
+//     { name: "Album",    price: 10  },
+//     { name: "Book",     price: 5   },
+//     { name: "Phone",    price: 500 },
+//     { name: "Computer", price: 1000},
+//     { name: "Keyboard", price: 25  }
+// ]
+
+// const total = items.reduce((currentTotal, item) => {
+//     return item.price + currentTotal
+// }, 0)
+
+// console.log(total)
+
+
+// The 'includes' method does not use a function. It simply checks that 
+// whatever is passed inside the methods parenthesis is included in the array
+// that was called. In this case it checks that 2 is inside the items array.
+// True if it does but false if it does not.
+const items = [1, 2, 3, 4, 5]
+
+const includesTwo = items.includes(2)
+
+console.log(includesTwo)
 
 
 
